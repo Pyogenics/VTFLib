@@ -12,7 +12,11 @@
 #ifndef VMTFILE_H
 #define VMTFILE_H
 
+#ifdef WINDOWS
 #include "stdafx.h"
+#endif
+
+#include "VTFLibTypes.h"
 #include "Readers.h"
 #include "Writers.h"
 #include "VMTNodes.h"

@@ -9,8 +9,11 @@
  * version.
  */
 
+#include <cstring>
+
 #include "VTFLib.h"
 #include "FileReader.h"
+#include "PlatformFileApi.h"
 
 using namespace VTFLib;
 using namespace VTFLib::IO::Readers;

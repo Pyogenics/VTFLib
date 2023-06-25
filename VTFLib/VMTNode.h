@@ -12,7 +12,11 @@
 #ifndef VMTNODE_H
 #define VMTNODE_H
 
+#ifdef WINDOWS
 #include "stdafx.h"
+#endif
+
+#include "VTFLibTypes.h"
 
 #ifdef __cplusplus
 extern "C" {

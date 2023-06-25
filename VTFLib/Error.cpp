@@ -11,6 +11,10 @@
 
 #include "Error.h"
 
+#include <cstdio>
+#include <cstring>
+#include <cstdarg>
+
 using namespace VTFLib::Diagnostics;
 
 CError::CError()
@@ -51,10 +55,11 @@ vlVoid CError::Set(const vlChar *cErrorMessage, vlBool bSystemError)
 	vlChar cBuffer[2048];
 	if(bSystemError)
 	{
-		LPSTR lpMessage = NULL;
+#ifdef WINDOWS
+		char *lpMessage = NULL;
 		vlUInt uiLastError = GetLastError(); 
 
-		if(FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM, NULL, uiLastError, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPSTR)&lpMessage, 0, NULL))
+		if(FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM, NULL, uiLastError, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (char*)&lpMessage, 0, NULL))
 		{
 			sprintf(cBuffer, "Error:\n%s\n\nSystem Error: 0x%.8x:\n%s", cErrorMessage, uiLastError, lpMessage); 
 
@@ -64,8 +69,7 @@ vlVoid CError::Set(const vlChar *cErrorMessage, vlBool bSystemError)
 		{
 			sprintf(cBuffer, "Error:\n%s\n\nSystem Error: 0x%.8x.", cErrorMessage, uiLastError); 
 		}
-
-		
+#endif
 	}
 	else
 	{

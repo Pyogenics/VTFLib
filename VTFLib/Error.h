@@ -20,7 +20,11 @@
 #ifndef ERROR_H
 #define ERROR_H
 
+#include "VTFLibTypes.h"
+
+#ifdef WINDOWS
 #include "stdafx.h"
+#endif
 
 namespace VTFLib
 {

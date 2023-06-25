@@ -12,7 +12,12 @@
 #ifndef VMTGROUPNODE_H
 #define VMTGROUPNODE_H
 
+#ifdef WINDOWS
 #include "stdafx.h"
+#endif
+
+#include "VTFLibTypes.h"
+
 #include "VMTNode.h"
 
 #include "VMTStringNode.h"

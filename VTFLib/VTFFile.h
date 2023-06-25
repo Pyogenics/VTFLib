@@ -20,10 +20,15 @@
 #ifndef VTFFILE_H
 #define VTFFILE_H
 
+#ifdef WINDOWS
 #include "stdafx.h"
+#endif
+
 #include "Readers.h"
 #include "Writers.h"
 #include "VTFFormat.h"
+#include "VTFLibTypes.h"
+#include "VTFLib.h"
 
 #ifdef __cplusplus
 extern "C" {

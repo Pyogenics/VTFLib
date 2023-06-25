@@ -34,7 +34,11 @@
 #ifndef VTFFORMAT_H
 #define VTFFORMAT_H
 
+#ifdef WINDOWS
 #include "stdafx.h"
+#endif
+
+#include "VTFLibTypes.h"
 
 #ifdef __cplusplus
 extern "C" {
