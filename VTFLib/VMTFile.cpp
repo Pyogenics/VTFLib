@@ -9,6 +9,8 @@
  * version.
  */
 
+#include <cctype>
+
 #include "VTFLib.h"
 #include "VMTFile.h"
 

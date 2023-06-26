@@ -25,6 +25,7 @@
 #include <assert.h>
 #include <math.h>
 #include <stdarg.h>
+#include <cstring>
 
 #include "VTFLibTypes.h"
 
