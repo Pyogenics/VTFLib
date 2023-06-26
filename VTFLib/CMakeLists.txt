@@ -35,7 +35,6 @@ target_include_directories(${PROJECT_NAME}
 target_compile_definitions(${PROJECT_NAME}
 	PRIVATE
 	NDEBUG
-	LINUX
 	VTFLIB_EXPORTS
 )
 target_compile_options(${PROJECT_NAME}

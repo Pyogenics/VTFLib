@@ -13,8 +13,6 @@
 #include "PosixFileApi.h"
 #endif
 
-#include <cstring>
-
 #include "VTFLib.h"
 #include "FileReader.h"
 #include "HLLib.h"

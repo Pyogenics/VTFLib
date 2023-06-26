@@ -13,8 +13,6 @@
 #include "PosixFileApi.h"
 #endif
 
-#include <cstring>
-
 #include "VTFLib.h"
 #include "MemoryWriter.h"
 

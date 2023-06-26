@@ -21,11 +21,7 @@
 #define SFLOAT16_MSB 1 // Most Significant Byte (1 for bigendian)
 #define SFLOAT16_LSB 0 // Least Significant Byte (0 for bigendian)
 
-#include "VTFLibTypes.h"
-
-#ifdef _WIN32
 #include "stdafx.h"
-#endif
 
 struct SFloat16
 {

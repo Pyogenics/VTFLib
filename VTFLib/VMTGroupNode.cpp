@@ -9,7 +9,7 @@
  * version.
  */
 
-#include "VTFLibTypes.h"
+#include "stdafx.h"
 #include "VMTGroupNode.h"
 
 using namespace VTFLib::Nodes;

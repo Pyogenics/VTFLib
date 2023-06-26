@@ -10,7 +10,6 @@
  */
 
 #include "VMTIntegerNode.h"
-#include <stdlib.h>
 
 using namespace VTFLib::Nodes;
 

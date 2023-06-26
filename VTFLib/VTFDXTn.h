@@ -12,11 +12,7 @@
 #ifndef VTFDXTN_H
 #define VTFDXTN_H
 
-#ifdef _WIN32
 #include "stdafx.h"
-#endif
-
-#include "VTFLibTypes.h"
 
 //-----------------------------------------------------------------------------
 //

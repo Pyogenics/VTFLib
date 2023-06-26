@@ -13,8 +13,6 @@
 #include "VTFFile.h"
 #include "VMTFile.h"
 
-#include "VTFLibTypes.h"
-
 using namespace VTFLib;
 
 namespace VTFLib

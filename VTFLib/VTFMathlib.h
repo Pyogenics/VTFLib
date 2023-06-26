@@ -22,13 +22,7 @@
 #ifndef VTFMATHLIB_H
 #define VTFMATHLIB_H
 
-#ifdef _WIN32
 #include "stdafx.h"
-#endif
-
-#include <math.h>
-
-#include "VTFLibTypes.h"
 
 // Defines for data alignment
 //---------------------------

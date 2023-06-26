@@ -12,11 +12,7 @@
 #ifndef PROC_H
 #define PROC_H
 
-#ifdef _WIN32
 #include "stdafx.h"
-#endif
-
-#include "VTFLibTypes.h"
 #include "Error.h"
 
 #ifdef __cplusplus

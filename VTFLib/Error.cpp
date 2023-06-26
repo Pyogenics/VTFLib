@@ -11,10 +11,6 @@
 
 #include "Error.h"
 
-#include <cstdio>
-#include <cstring>
-#include <cstdarg>
-
 using namespace VTFLib::Diagnostics;
 
 CError::CError()

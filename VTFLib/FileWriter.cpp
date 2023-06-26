@@ -16,8 +16,6 @@
 #include "VTFLib.h"
 #include "FileWriter.h"
 
-#include <cstring>
-
 using namespace VTFLib;
 using namespace VTFLib::IO::Writers;
 

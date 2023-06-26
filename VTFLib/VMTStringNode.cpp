@@ -9,8 +9,6 @@
  * version.
  */
 
-#include <cstring>
-
 #include "VMTStringNode.h"
 
 using namespace VTFLib::Nodes;

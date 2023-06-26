@@ -12,11 +12,7 @@
 #ifndef VMTSINGLENODE_H
 #define VMTSINGLENODE_H
 
-#ifdef WINDOWS
 #include "stdafx.h"
-#endif
-
-#include "VTFLibTypes.h"
 #include "VMTValueNode.h"
 
 namespace VTFLib

@@ -9,11 +9,6 @@
  * version.
  */
 
-#include <cassert>
-#include <cstring>
-#include <cstdio>
-#include <cctype>
-
 #include "VTFLib.h"
 #include "VMTFile.h"
 

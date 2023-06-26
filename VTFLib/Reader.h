@@ -12,11 +12,7 @@
 #ifndef READER_H
 #define READER_H
 
-#ifdef WINDOWS
 #include "stdafx.h"
-#endif
-
-#include "VTFLibTypes.h"
 
 namespace VTFLib
 {
