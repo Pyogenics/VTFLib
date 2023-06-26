@@ -29,6 +29,7 @@ typedef vlSingle		vlFloat;			//!< Floating point number (same as vlSingled).
 
 #ifdef LINUX
 typedef void *HANDLE; // Pyogenics: Glad I use linux.
+#define INVALID_HANDLE_VALUE NULL
 #endif
 
 #ifdef WINDOWS
