@@ -9,8 +9,14 @@
  * version.
  */
 
+#ifndef _WIN32
+#include "PosixFileApi.h"
+#endif
+
 #include "VTFLib.h"
 #include "FileWriter.h"
+
+#include <cstring>
 
 using namespace VTFLib;
 using namespace VTFLib::IO::Writers;

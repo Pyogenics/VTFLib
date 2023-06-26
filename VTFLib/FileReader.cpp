@@ -9,11 +9,15 @@
  * version.
  */
 
+#ifndef _WIN32
+#include "PosixFileApi.h"
+#endif
+
 #include <cstring>
 
 #include "VTFLib.h"
 #include "FileReader.h"
-#include "PlatformFileApi.h"
+#include "HLLib.h"
 
 using namespace VTFLib;
 using namespace VTFLib::IO::Readers;
