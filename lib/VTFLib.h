@@ -12,18 +12,18 @@
 #ifndef VTFLIB_H
 #define VTFLIB_H
 
-#ifdef WINDOWS
-
-#ifdef VTFLIB_EXPORTS
-#define VTFLIB_API __declspec(dllexport)
-#else
-#define VTFLIB_API __declspec(dllimport)
+#ifdef _WIN32
+//XXX: Maybe this should be under _MSC_VER (duplicate in other places)
+#	ifdef VTFLIB_EXPORTS
+#		define VTFLIB_API __declspec(dllexport)
+#	else
+#		define VTFLIB_API __declspec(dllimport)
+#	endif
+#elif __GNUC__ >= 4
+#	define VTFLIB_API __attribute__((visibility("default"))) //XXX: Stupid compiler specific code (GCC)
 #endif
 
-#else
-#define VTFLIB_API __attribute__((visibility("default"))) //XXX: Stupid compiler specific code (GCC)
-#endif
-
+//XXX: This stuff is duplicated from the main VTFLib dir.
 typedef unsigned char	vlBool;
 typedef char			vlChar;
 typedef unsigned char	vlByte;

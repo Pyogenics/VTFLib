@@ -32,6 +32,7 @@
 #	define WIN32_LEAN_AND_MEAN
 #	include <windows.h>
 /* Visibility */
+//XXX: Maybe this should be under _MSC_VER (duplicate in other places)
 #	ifdef VTFLIB_EXPORTS
 #		define VTFLIB_API __declspec(dllexport)
 #	else

@@ -51,7 +51,7 @@ vlVoid CError::Set(const vlChar *cErrorMessage, vlBool bSystemError)
 	vlChar cBuffer[2048];
 	if(bSystemError)
 	{
-#ifdef WINDOWS
+#ifdef _WIN32
 		char *lpMessage = NULL;
 		vlUInt uiLastError = GetLastError(); 
 
