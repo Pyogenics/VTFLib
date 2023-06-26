@@ -12,10 +12,16 @@
 #ifndef VTFLIB_H
 #define VTFLIB_H
 
+#ifdef WINDOWS
+
 #ifdef VTFLIB_EXPORTS
 #define VTFLIB_API __declspec(dllexport)
 #else
 #define VTFLIB_API __declspec(dllimport)
+#endif
+
+#else
+#define VTFLIB_API __attribute__((visibility("default"))) //XXX: Stupid compiler specific code (GCC)
 #endif
 
 typedef unsigned char	vlBool;
