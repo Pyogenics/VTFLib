@@ -13,6 +13,8 @@
 #include "VTFFile.h"
 #include "VMTFile.h"
 
+#include "VTFLibTypes.h"
+
 using namespace VTFLib;
 
 namespace VTFLib
@@ -331,7 +333,7 @@ VTFLIB_API vlVoid vlSetFloat(VTFLibOption Option, vlSingle sValue)
 // DllMain()
 // DLL entry point.
 //
-BOOL APIENTRY DllMain(HANDLE hModule, DWORD dwReason, LPVOID lpReserved)
+bool APIENTRY DllMain(HANDLE hModule, unsigned long dwReason, void *lpReserved)
 {
 	switch(dwReason)
 	{
@@ -345,5 +347,5 @@ BOOL APIENTRY DllMain(HANDLE hModule, DWORD dwReason, LPVOID lpReserved)
 		vlShutdown();
 		break;
 	}
-    return TRUE;
+    return true;
 }

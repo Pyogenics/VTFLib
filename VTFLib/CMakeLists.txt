@@ -29,6 +29,7 @@ target_sources(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME}
 	PRIVATE
 	${CMAKE_CURRENT_SOURCE_DIR}
+	${CMAKE_SOURCE_DIR}/lib
 )
 #XXX: Add windows support here
 target_compile_definitions(${PROJECT_NAME}
@@ -40,4 +41,5 @@ target_compile_definitions(${PROJECT_NAME}
 target_compile_options(${PROJECT_NAME}
 	PRIVATE
 	-fvisibility=hidden #XXX: remove this on non GCC builds
+	-fpermissive #XXX: this is for some real strange stuff in Proc.cpp
 )

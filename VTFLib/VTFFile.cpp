@@ -9,6 +9,13 @@
  * version.
  */
 
+#ifndef _WIN32
+#include "PosixFileApi.h"
+#endif
+
+#include <cstring>
+#include <cassert>
+
 #include "VTFLib.h"
 #include "VTFFile.h"
 #include "VTFFormat.h"

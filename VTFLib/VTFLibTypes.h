@@ -27,9 +27,22 @@ typedef vlSingle		vlFloat;			//!< Floating point number (same as vlSingled).
 #define vlFalse 0
 #define vlTrue 1
 
+//XXX: Maybe some of this plat stuff needs to be moved into a more appropriate place?
 #ifdef LINUX
 typedef void *HANDLE; // Pyogenics: Glad I use linux.
 #define INVALID_HANDLE_VALUE NULL
+
+#include <strings.h>
+#define _stricmp strcasecmp
+#define stricmp _stricmp
+
+#define STATIC_ASSERT(X,Y) // Do nothing
+#define APIENTRY
+
+#define DLL_PROCESS_DETACH 0
+#define DLL_PROCESS_ATTACH 1
+#define DLL_THREAD_ATTACH 2
+#define DLL_THREAD_DETACH 3
 #endif
 
 #ifdef WINDOWS
