@@ -2,7 +2,7 @@
 #ifndef POSIXFILEAPI_H
 #define POSIXFILEAPI_H
 
-#include "VTFLibTypes.h"
+#include "stdafx.h"
 
 //https://learn.microsoft.com/en-us/windows/win32/api/minwinbase/ns-minwinbase-overlapped
 typedef struct _OVERLAPPED {
