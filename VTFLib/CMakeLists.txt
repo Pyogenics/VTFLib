@@ -5,6 +5,7 @@ add_library(${PROJECT_NAME} SHARED)
 target_sources(${PROJECT_NAME}
 	PRIVATE
 	Error.cpp
+	PosixFileApi.cpp
 	FileReader.cpp
 	FileWriter.cpp
 	Float16.cpp
