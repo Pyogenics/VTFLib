@@ -10,7 +10,7 @@
  */
 
 #ifndef _WIN32
-#include "PosixFileApi.h"
+#include "FileApi.h"
 #endif
 
 #include "VTFLib.h"

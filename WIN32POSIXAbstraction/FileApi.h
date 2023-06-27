@@ -1,8 +1,12 @@
 //XXX: ONLY INCLUDE THIS ON NON WINDOWS SYSTEMS
-#ifndef POSIXFILEAPI_H
-#define POSIXFILEAPI_H
+#ifndef FILEAPI_H
+#define FILEAPI_H
 
-#include "stdafx.h"
+#ifndef __cplusplus
+#	include <stdbool.h>
+#endif
+
+#include "WIN32POSIXAbstraction.h"
 
 //https://learn.microsoft.com/en-us/windows/win32/api/minwinbase/ns-minwinbase-overlapped
 typedef struct _OVERLAPPED {
@@ -42,6 +46,7 @@ typedef struct _SECURITY_ATTRIBUTES {
 #define OPEN_ALWAYS 4
 #define TRUNCATE_EXISTING 5
 
+#define FILE_ATTRIBUTE_DIRECTORY 0x00000010
 #define FILE_ATTRIBUTE_ARCHIVE 0x20
 #define FILE_ATTRIBUTE_ENCRYPTED 0x4000
 #define FILE_ATTRIBUTE_HIDDEN 0x2
@@ -100,4 +105,4 @@ unsigned long SetFilePointer(HANDLE hFile, long lDistanceToMove, long* lpDistanc
 //https://learn.microsoft.com/en-us/windows/win32/api/handleapi/nf-handleapi-closehandle
 bool CloseHandle(HANDLE handle);
 
-#endif //POSIXFILEAPI_H
+#endif //FILEAPI_H

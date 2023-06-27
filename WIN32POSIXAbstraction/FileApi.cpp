@@ -1,6 +1,7 @@
 #include <iostream>
+#include <cstring>
 
-#include "PosixFileApi.h"
+#include "FileApi.h"
 
 bool fileExists(const char* fileName)
 {
