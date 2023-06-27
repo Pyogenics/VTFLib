@@ -2,7 +2,7 @@
 
 #include "PosixFileApi.h"
 
-bool fileExists(char* fileName)
+bool fileExists(const char* fileName)
 {
 	bool exists = false;
 	FILE* file = fopen(fileName, "r");
@@ -92,4 +92,71 @@ HANDLE CreateFile(
 		std::cout << "Warning: CreateFile recieved args it doesn't implement.";
 
 	return (HANDLE)file;
+}
+
+bool ReadFile(HANDLE hFile, void *lpBuffer, unsigned long nNumberOfBytesToRead, unsigned long *lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped)
+{
+	bool success = true;
+	if(!fgets((char*)lpBuffer, nNumberOfBytesToRead, hFile))
+		success = false;
+
+	// Unimplemented features
+	if (lpNumberOfBytesRead || lpOverlapped)
+		std::cout << "Warning: ReadFile recieved args it doesn't implement.";
+
+	return success;
+}
+
+bool WriteFile(HANDLE hFile, const void *lpBuffer, unsigned long nNumberOfBytesToWrite, unsigned long* lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped)
+{
+	bool success = false;
+	char* trimmedBuffer = (char*)malloc(nNumberOfBytesToWrite+1); // Always +1 to include a null character for fputs
+	memcpy(trimmedBuffer, lpBuffer, nNumberOfBytesToWrite);
+
+	if (fputs(trimmedBuffer, hFile) != EOF)
+		success = true;
+
+	free(trimmedBuffer); // FREE THE BUFFER!
+
+	return success;
+}
+
+unsigned long GetFileSize(HANDLE hFile, unsigned long* lpFileSizeHigh)
+{
+	unsigned long filePos = ftell(hFile);
+	fseek(hFile, 0L, SEEK_END);
+	unsigned long size = ftell(hFile);
+	fseek(hFile, filePos, SEEK_SET);
+
+	//XXX: Ignoring lpFileSizeHigh, why is this even a thing?
+
+	return size;
+}
+
+
+unsigned long SetFilePointer(HANDLE hFile, long lDistanceToMove, long* lpDistanceToMoveHigh, unsigned long dwMoveMethod)
+{
+	switch (dwMoveMethod)
+	{
+		case FILE_BEGIN:
+			fseek(hFile, lDistanceToMove, SEEK_SET);
+			break;
+		case FILE_CURRENT:
+			fseek(hFile, lDistanceToMove, SEEK_CUR);
+			break;
+		case FILE_END:
+			fseek(hFile, lDistanceToMove, SEEK_END);
+			break;
+	}
+
+	return ftell(hFile);
+}
+
+
+bool CloseHandle(HANDLE handle)
+{
+	if (fclose(handle) == 0)
+		return 1;
+	else
+		return 0;
 }

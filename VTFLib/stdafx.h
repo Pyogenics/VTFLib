@@ -41,7 +41,7 @@
 #	endif
 #else
 /* HANDLE */
-	typedef void *HANDLE; // Pyogenics: Glad I use linux.
+	typedef FILE* HANDLE; // This is practically a file
 #	define INVALID_HANDLE_VALUE NULL
 /* Stricmp */
 #	include <strings.h>
